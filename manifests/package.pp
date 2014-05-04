@@ -26,7 +26,9 @@ class bucky::package {
 
   #### Package management
 
-  include python
+  if (!defined(Class['python'])) {
+    include python
+  }
 
   # set params: in operation
   if $bucky::ensure == 'present' {
